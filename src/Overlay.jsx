@@ -306,7 +306,7 @@ function Colorpicker(){
   const activePalette = snap.palettes[snap.activepart] || []
 
   return (
-    <div ref={pickerRef} className="  md:bottom-6   bottom-30 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 ml-32 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
+    <div ref={pickerRef} className="   md:bottom-6  bottom-30 fixed left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 ml-32 md:ml-0 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
       
      
 
