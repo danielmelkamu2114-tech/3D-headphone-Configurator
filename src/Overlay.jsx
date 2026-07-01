@@ -61,7 +61,7 @@ useGSAP(()=>{
     
  return(<><header className=' items-center mx-auto pt-5 max-w-5xl  text-1xl' >
     <div className=' flex justify-between  md:w-full'>
-        <div className='ml-4'>logo</div>
+        <div className='ml-4'>HEADPHONE</div>
         <nav className='hidden sm:flex gap-20  bg-linear-to-bl from-gray-300 to-80%  rounded-full p-2 outline-1 outline-gray-400 outline-offset-1'> 
             <div>Home </div>
             <div>shop </div>

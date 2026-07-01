@@ -60,7 +60,9 @@ RectAreaLightUniformsLib.init()
           
           <directionalLight/>
           <directionalLight  intensity={2} position={[5,-1,0]}/>
-          <directionalLight ref={dirLightRef}  intensity={0.7} position={[3,1,0]}/>
+          <directionalLight 
+          // ref={dirLightRef}
+            intensity={0.7} position={[3,1,0]}/>
 
          <directionalLight  intensity={0.2} position={[5,-1,20]}/>
          {/* <directionalLight intensity={0} position={[5,-10,100]}/> */}
@@ -68,7 +70,7 @@ RectAreaLightUniformsLib.init()
        
      
         <rectAreaLight
-        ref={rectLightRef1}
+        // ref={rectLightRef1}
         width={10}
         height={20}
         intensity={1}
@@ -78,7 +80,7 @@ RectAreaLightUniformsLib.init()
       /> 
 
      <rectAreaLight
-        ref={rectLightRef}
+        // ref={rectLightRef}
         width={4}
         height={4}
         intensity={5}
