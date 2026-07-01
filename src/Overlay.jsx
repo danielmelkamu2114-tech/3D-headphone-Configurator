@@ -248,9 +248,9 @@ const snap = useSnapshot(state)
                     <button ref={text5} className=' md:ml-46  py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50 bg-amber-400'>Buy Now!</button>
                 </div>
             </div>
-            <div className=' flex md:flex-row flex-col justify-between max-w-6xl  mx-auto'>
-            <div className=' md:mr-9 md:order-1 md:pl-3 pl-1  px-auto  pt-2'>
-               <button ref={button1} className='bg-black   ml-28  md:ml-46 py-2 px-6 md:px-auto text-left  rounded-sm font-medium text-amber-50'>Take Photo</button>
+            <div className=' flex md:flex-row flex-col justify-between max-w-7xl items-center '>
+            <div className=' md:mr-1 md:order-1 md:pl-3     pt-2'>
+               <button ref={button1} className='bg-black  mx-auto md:ml-30   py-2 px-6 md:px-auto text-left  rounded-sm font-medium text-amber-50'>Take Photo</button>
             </div>
 
             <div  className='bg-grey-100 shadow pointer-events-auto flex py-3 md:px-30 flex-col-2 md:flex-wrap pr-3   gap-3 '> 
@@ -306,7 +306,7 @@ function Colorpicker(){
   const activePalette = snap.palettes[snap.activepart] || []
 
   return (
-    <div ref={pickerRef} className=" absolute md:bottom-6  bottom-30 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 ml-32 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
+    <div ref={pickerRef} className="  md:bottom-6   bottom-30 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 ml-32 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
       
      
 
