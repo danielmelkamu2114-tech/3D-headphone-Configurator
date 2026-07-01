@@ -59,7 +59,7 @@ useGSAP(()=>{
 
 
     
- return(<><header className=' bg-amber-500 items-center mx-auto mt-7 max-w-5xl  text-1xl' >
+ return(<><header className=' items-center mx-auto pt-5 max-w-5xl  text-1xl' >
     <div className=' flex justify-between  md:w-full'>
         <div className='ml-4'>logo</div>
         <nav className='hidden sm:flex gap-20  bg-linear-to-bl from-gray-300 to-80%  rounded-full p-2 outline-1 outline-gray-400 outline-offset-1'> 
@@ -74,19 +74,19 @@ useGSAP(()=>{
 </header>
 
 
-<section className=' overflow-hidden max-w-5xl mx-auto px-auto items-center  p-3 md:pl-80 pt-15  w-full h-full'>
+<section className=' overflow-hidden max-w-5xl mx-auto px-auto items-center  p-3 md:pl-80 md:pt-15   md:w-screen md:h-screen '>
    
-   
-    <div ref={text1}  className=' bg-amber-300 tracking-wide  leading-20 md:leading-26 font-[Arial] font-bold uppercase text-center md:text-left md:px-50 text-7xl md:text-8xl    mask-radial-from-neutral-500 text-zinc-950' >
+    <div className=' '>
+    <div ref={text1}  className='  tracking-wide  leading-20 md:leading-26 font-[Arial] font-bold uppercase text-center md:text-left md:px-50 text-7xl md:text-8xl    mask-radial-from-neutral-500 text-zinc-950' >
        Let's
        Create 
        It!
          
     </div>
     
-    <div ref={text2} className='bg-amber-700/30 md:p-3 py-3 pr-3 pl-2 pt-5 shadow   mb-10 md:ml-80 text-sm max-w-100'>
+    <div ref={text2} className=' md:p-3 py-3 pr-3 pl-2 pt-5 shadow shadow-2xl shadow-amber-300/30  mb-10 md:ml-80 text-sm max-w-100'>
 Create your unique and exclusive headphone with our brand new 3D configurator tool. Unleash your imagination, customize every detail, and <strong>define your own sonic style.</strong>  </div>
-   <div ref={text3} className='text-center'>
+   <div ref={text3} className='text-center  pt-60 md:pt-0 '>
     <button onClick={()=>{
          
         const width = window.innerWidth
@@ -110,7 +110,8 @@ Create your unique and exclusive headphone with our brand new 3D configurator to
 
       })
       state.intro = false}}
-    className='pointer-events-auto bg-amber-400 md:ml-46 py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50 '>Customize it</button>
+    className='pointer-events-auto bg-amber-400 md:ml-46 py-2 px-5  md:text-left rounded-sm font-medium text-amber-50 '>Customize it</button>
+   </div>
    </div>
 </section></>)   
 }
@@ -196,10 +197,10 @@ const snap = useSnapshot(state)
 
     return(<>
     
-    <section className='   overflow-hidden '>
+    <section className='  overflow-hidden '>
         <div>
             <header>
-                <div  className='bg-amber-300 text-right pr-5 md:pr-55 pt-10'>
+                <div  className=' text-right pr-5 md:pr-55 pt-4'>
            
                    <button 
                    ref={button}
@@ -225,37 +226,39 @@ const snap = useSnapshot(state)
                           ease:'power1.out'
 
       })(state.intro=true)}}
-                    className=' pointer-events-auto bg-black ml-46 md:py-2 md:px-5 p-3 text-left rounded-sm font-medium text-amber-50' 
+                    className='pointer-events-auto bg-black ml-46 md:py-2 md:px-5 p-3 py-2 text-left rounded-sm font-medium text-amber-50' 
                     >Go Back</button>
                     </div>
 
                 
             </header>
-            <div className='mt-90 flex flex-col md:gap-10 gap-8 items-left md:m-30 md:mt-30 ' >
+            <div className='  mt-65 flex flex-col md:gap-10   gap-8 items-left md:m-30 md:mt-30' >
                
-                <div ref={text3} className=' text-center md:text-left md:text-7xl text-5xl font-bold mask-b-from-cyan-700 '>
-                     Just relax and <br />
-                     Go with the flow!
+                <div ref={text3} className=' sm:flex flex-col text-center md:text-left md:text-7xl text-4xl  font-bold mask-b-from-cyan-800 '>
+                    <h1> Just relax and </h1>
+                <div>
+                 <h1> Go with the flow!</h1>
                 </div>
-                 <div ref={text4} className=' bg-amber-300 text-sm max-w-100 text-center px-auto md:text-left mt-2.5 shadow '>
+                </div>
+                 <div ref={text4} className=' text-sm max-w-100 text-center px-auto md:text-left mt-4 shadow '>
                     A configurator which you can customize <br /> The color for each part of the headphone <br /> And add premade stickers!! 
                 </div>
               
-                <div className='  text-center md:text-left'>
-                    <button ref={text5} className='bg-amber-400 md:ml-46  py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50'>Buy Now!</button>
+                <div className='  text-center md:text-left md:ml-2'>
+                    <button ref={text5} className=' md:ml-46  py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50 bg-amber-400'>Buy Now!</button>
                 </div>
             </div>
-            <div className=' flex md:flex-row flex-col justify-between max-w-6xl  mx-auto  '>
-            <div className=' md:mr-9 md:order-1 pl-3  bg-amber-500 pt-2'>
-               <button ref={button1} className='bg-black  ml-35 md:ml-46 py-2 px-6 md:px-auto text-left rounded-sm font-medium text-amber-50'>Take Photo</button>
+            <div className=' flex md:flex-row flex-col justify-between max-w-6xl  mx-auto'>
+            <div className=' md:mr-9 md:order-1 md:pl-3 pl-1  px-auto  pt-2'>
+               <button ref={button1} className='bg-black   ml-28  md:ml-46 py-2 px-6 md:px-auto text-left  rounded-sm font-medium text-amber-50'>Take Photo</button>
             </div>
 
-            <div  className='bg-amber-900 pointer-events-auto flex py-3 px-5 flex-wrap gap-4 '> 
+            <div  className='bg-grey-100 shadow pointer-events-auto flex py-3 md:px-30 flex-col-2 md:flex-wrap pr-3   gap-3 '> 
               { headphoneParts.map((part)=>(
                 <button 
                
                  key={part.id}  
-               className='part-nav-btn rounded-md px-4 py-2 pointer-events-auto  text-amber-50  bg-gray-900/50 '
+               className='part-nav-btn transition-all duration-200 active:scale-90 rounded-md px-2 py-2 pointer-events-auto  text-amber-50  bg-gray-900/50 '
               //  style={{backgroundColor :'#ffffff'}}
                onClick={()=>{state.activepart = part.id}}>
                {part.label} </button>
@@ -284,10 +287,9 @@ function Colorpicker(){
     const snap = useSnapshot(state)
     const pickerRef = useRef()
       useGSAP(() => {
-    // Bring the buttons FROM hidden positions into clean visibility
     gsap.from(".part-nav-btn", {
       yPercent: 100,
-      opacity: 0,
+      opacity: 0.01,
       duration: 1,
       ease: 'power2.out',
       force3D: true
@@ -304,14 +306,14 @@ function Colorpicker(){
   const activePalette = snap.palettes[snap.activepart] || []
 
   return (
-    <div ref={pickerRef} className=" absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
+    <div ref={pickerRef} className=" absolute md:bottom-6  bottom-30 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-zinc-800/90 ml-32 backdrop-blur-md p-4 rounded-2xl border border-zinc-800 shadow-2xl animate-fade-in-up">
       
      
 
       <div className="h-6 w-[1px] bg-white" /> {/* Vertical divider line */}
 
       {/* 3. Render only the custom colors for this part */}
-      <div className="flex gap-3">
+      <div className=" flex  flex-col md:flex-row  gap-3">
         {activePalette.map((colorObj) => {
           // Check if this circle matches the currently applied color for this specific part
           const isSelected = snap.colors[snap.activepart] === colorObj.hex
@@ -323,7 +325,7 @@ function Colorpicker(){
                 // Update the color for ONLY the active part in our store
                 state.colors[state.activepart] = colorObj.hex
               }}
-              className={' part-nav-btn pointer-events-auto w-9 h-9 rounded-full border transition-all duration-200 active:scale-90 relative'}
+              className={'part-nav-btn pointer-events-auto md:w-9 md:h-9 w-8 h-8 rounded-full border transition-all duration-200 active:scale-90 relative'}
               
               style={{ backgroundColor: colorObj.hex }}
               title={colorObj.name} // Shows name when user hovers over the circle
