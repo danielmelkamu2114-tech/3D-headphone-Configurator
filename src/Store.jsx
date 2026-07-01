@@ -12,12 +12,19 @@ const state = proxy({
 
     palettes: {
         cups:[{ name: 'Blue', hex: '#2563eb' },
-     {          name: 'Black', hex: '#18181b' }],
+              { name: 'blue silver', hex: '#b7babf' },
+              { name: 'Black', hex: '#1c1d21' },
+              { name: 'dark blue', hex: '#1e293b' }],
      slider:[{name:'golden', hex:"#EBD4A7"},
-            {name:'white', hex:"#ffffff"}
+            {name:'Liquid Silver', hex:"#d1d5db"},
+            {name:'Graphite', hex:"#374151"},
+            {name:'Copper', hex:"#b45309"}
      ],
      cushion:[{name:'brown', hex: "#9D5242FF"},
-             {name:"black", hex:"#18181b"}]
+               {name:"silver", hex:"#b7babf"},
+             
+             {name:"gold", hex:"#e0a899"},
+             {name:"blue", hex:"#1e293b"}]
      
     },
     headphonex:0,

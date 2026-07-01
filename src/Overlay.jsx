@@ -110,7 +110,7 @@ Create your unique and exclusive headphone with our brand new 3D configurator to
 
       })
       state.intro = false}}
-    className='pointer-events-auto bg-amber-400 md:ml-46 py-2 px-5  md:text-left rounded-sm font-medium text-amber-50 '>Customize it</button>
+    className='pointer-events-auto bg-amber-400 md:ml-46 py-2 px-5  md:text-left rounded-sm font-medium text-amber-50 hover:-translate-y-0.5 hover:scale-100 hover:shadow-md hover:shadow-black/30'>Customize it</button>
    </div>
    </div>
 </section></>)   
@@ -197,7 +197,7 @@ const snap = useSnapshot(state)
 
     return(<>
     
-    <section className='  overflow-hidden '>
+    <section className='w-screen h-screen  overflow-hidden '>
         <div>
             <header>
                 <div  className=' text-right pr-5 md:pr-55 pt-4'>
@@ -226,7 +226,7 @@ const snap = useSnapshot(state)
                           ease:'power1.out'
 
       })(state.intro=true)}}
-                    className='pointer-events-auto bg-black ml-46 md:py-2 md:px-5 p-3 py-2 text-left rounded-sm font-medium text-amber-50' 
+                    className='pointer-events-auto bg-black ml-46 md:py-2 md:px-5 p-3 py-2 text-left rounded-sm font-medium text-amber-50 hover:-translate-y-0.5 hover:scale-100 hover:shadow-md hover:shadow-black/30' 
                     >Go Back</button>
                     </div>
 
@@ -240,17 +240,17 @@ const snap = useSnapshot(state)
                  <h1> Go with the flow!</h1>
                 </div>
                 </div>
-                 <div ref={text4} className=' text-sm max-w-100 text-center px-auto md:text-left mt-4 shadow '>
+                 <div ref={text4} className=' text-sm max-w-100 text-center px-auto md:text-left mt-4 shadow shadow-amber-300/30 shadow-2xl'>
                     A configurator which you can customize <br /> The color for each part of the headphone <br /> And add premade stickers!! 
                 </div>
               
                 <div className='  text-center md:text-left md:ml-2'>
-                    <button ref={text5} className=' md:ml-46  py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50 bg-amber-400'>Buy Now!</button>
+                    <button ref={text5} className='pointer-events-auto md:ml-46  py-2 px-5 text-center md:text-left rounded-sm font-medium text-amber-50 bg-amber-400 hover:-translate-y-0.5 hover:scale-100 hover:shadow-md hover:shadow-black/30'>Buy Now!</button>
                 </div>
             </div>
             <div className=' flex md:flex-row flex-col justify-between max-w-7xl items-center '>
             <div className=' md:mr-1 md:order-1 md:pl-3     pt-2'>
-               <button ref={button1} className='bg-black  mx-auto md:ml-30   py-2 px-6 md:px-auto text-left  rounded-sm font-medium text-amber-50'>Take Photo</button>
+               <button ref={button1} className='pointer-events-auto bg-black  mx-auto md:ml-30   py-2 px-6 md:px-auto text-left  rounded-sm font-medium text-amber-50 hover:-translate-y-0.5 hover:scale-100 hover:shadow-md hover:shadow-black/30'>Take Photo</button>
             </div>
 
             <div  className='bg-grey-100 shadow pointer-events-auto flex py-3 md:px-30 flex-col-2 md:flex-wrap pr-3   gap-3 '> 
@@ -258,7 +258,7 @@ const snap = useSnapshot(state)
                 <button 
                
                  key={part.id}  
-               className='part-nav-btn transition-all duration-200 active:scale-90 rounded-md px-2 py-2 pointer-events-auto  text-amber-50  bg-gray-900/50 '
+               className='part-nav-btn transition-all duration-200 active:scale-90 rounded-md px-2 py-2 pointer-events-auto  text-amber-50  bg-gray-900/50 hover:-translate-y-0.5 hover:scale-100 hover:shadow-md hover:shadow-black/30 '
               //  style={{backgroundColor :'#ffffff'}}
                onClick={()=>{state.activepart = part.id}}>
                {part.label} </button>

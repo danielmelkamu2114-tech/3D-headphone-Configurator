@@ -4,19 +4,28 @@ Command: npx gltfjsx@6.5.3 public/Headphone.glb --transform --keepmeshes --R 204
 Files: public/Headphone.glb [5.48MB] > C:\Users\danie\OneDrive\Documents\GitHub\headset_3d_configration\Headphone_Configrator\Headphone-transformed.glb [733.02KB] (87%)
 */
 
-import React, { useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useSnapshot } from 'valtio'
 import { state } from './Store'
 import { useFrame } from '@react-three/fiber'
+import * as THREE from 'three'
+ 
 
 export function Headphone(props) {
 
   const meshref = useRef()
+  const matCushionRef = useRef()
+  const matCupsRef = useRef()
+  const matSliderRef = useRef()
 
-  const snap = useSnapshot(state)
+
+
   const { nodes, materials } = useGLTF('/Headphone-transformed.glb')
-
+  const baseMaterial = materials['MergedBake_Baked.008']
+  const cushionMaterial = useMemo(() => baseMaterial.clone(), [baseMaterial])
+  const earcupMaterial = useMemo(() => baseMaterial.clone(), [baseMaterial])
+    const sliderMaterial = useMemo(() => baseMaterial.clone(), [baseMaterial])
 
   useFrame(()=>{
     meshref.current.position.x= state.headphonex
@@ -27,79 +36,101 @@ export function Headphone(props) {
     meshref.current.scale.set(targetscale, targetscale, targetscale)
   })
 
+useFrame(()=>{
+  const tempColor = new THREE.Color()
+
+    // Smoothly fade Cushions material
+    if (matCushionRef.current && state.colors?.cushion) {
+      tempColor.set(state.colors.cushion) // Get target color from raw state proxy
+      matCushionRef.current.color.lerp(tempColor,0.08) // 0.08 is transition speed. Lower = slower/smoother
+    }   
+
+    // Smoothly fade Ear Cups material
+    if (matCupsRef.current && state.colors?.cups ) {
+      tempColor.set(state.colors.cups)
+      matCupsRef.current.color.lerp(tempColor, 0.08)
+    }
+
+    // Smoothly fade Slider material
+    if (matSliderRef.current && state.colors?.slider) {
+      tempColor.set(state.colors.slider )
+      matSliderRef.current.color.lerp(tempColor, 0.08)
+    }
+  })
 
   return (
     <group ref={meshref}  {...props} dispose={null}>
 <mesh geometry={nodes.ear_cushion_Baked.geometry}>
   
-  <primitive
-    object={materials['MergedBake_Baked.008'].clone()} 
+  <primitive ref={matCushionRef}
+    object={cushionMaterial } 
     attach="material" 
-color={snap.colors.cushion} />
+    
+ />
 
 </mesh>
       <mesh geometry={nodes.earcup_Baked.geometry} material={materials['MergedBake_Baked.008']}  > 
-          <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+          <primitive  ref={matCupsRef}
+    object={earcupMaterial} 
     attach="material" 
-    color={snap.colors.cups} // Or use '#ff0000' with all 6 digits!
   />
 
 </mesh>
       <mesh geometry={nodes.headband_cushion_Baked.geometry} material={materials['MergedBake_Baked.008']} >
-  <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+  <primitive ref={matCushionRef}
+    object={cushionMaterial } 
     attach="material" 
-color={snap.colors.cushion}   />
+    
+  />
 
 </mesh>
       <mesh geometry={nodes.headband_top_Baked.geometry} material={materials['MergedBake_Baked.008']} position={[0.125, 2.483, -0.202]} >
-     <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+     <primitive ref={matCupsRef}
+    object={earcupMaterial} 
     attach="material" 
-color={snap.colors.cups}   />
+ />
 
 </mesh>
       <mesh geometry={nodes.holder_Baked.geometry} material={materials['MergedBake_Baked.008']} >
-          <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+          <primitive ref={matCushionRef}
+    object={cushionMaterial } 
     attach="material" 
-    color={snap.colors.cushion} // Or use '#ff0000' with all 6 digits!
+     // Or use '#ff0000' with all 6 digits!
   />
 
 </mesh>
       <mesh geometry={nodes.insidespeacker_Baked.geometry} material={materials['MergedBake_Baked.008']} >
-      <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+      <primitive ref={matCushionRef}
+    object={cushionMaterial } 
     attach="material" 
-color={snap.colors.cushion}   />
+   />
 
 </mesh>
       <mesh geometry={nodes.middle_Baked.geometry} material={materials['MergedBake_Baked.008']} >
-          <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+          <primitive ref={matCupsRef}
+    object={earcupMaterial} 
     attach="material" 
-color={snap.colors.cups} 
+
   />
 
 </mesh>
-      <mesh geometry={nodes.outerspeacker_Baked.geometry} material={materials['MergedBake_Baked.008']} >  <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+      <mesh geometry={nodes.outerspeacker_Baked.geometry} material={baseMaterial} >  <primitive 
+    object={baseMaterial.clone()} 
     attach="material" 
     color="black" // Or use '#ff0000' with all 6 digits!
   />
 
 </mesh>
-      <mesh geometry={nodes.slider_Baked.geometry} material={materials['MergedBake_Baked.008']} >
-       <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+      <mesh geometry={nodes.slider_Baked.geometry} material={baseMaterial} >
+       <primitive  ref={matSliderRef}
+    object={sliderMaterial} 
     attach="material" 
-color={snap.colors.slider}   />
+   />
 
 </mesh>
-      <mesh geometry={nodes.volume_Baked.geometry} material={materials['MergedBake_Baked.008']} >
+      <mesh geometry={nodes.volume_Baked.geometry} material={baseMaterial} >
           <primitive 
-    object={materials['MergedBake_Baked.008'].clone()} 
+    object={baseMaterial.clone()} 
     attach="material" 
     color="white" // Or use '#ff0000' with all 6 digits!
   />
