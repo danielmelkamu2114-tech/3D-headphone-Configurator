@@ -99,7 +99,7 @@ RectAreaLightUniformsLib.init()
   </group>
     </group>
   
-    <OrbitControls />
+    {/* <OrbitControls /> */}
     </>
     
   )
