@@ -13,7 +13,7 @@ const state = proxy({
     palettes: {
         cups:[{ name: 'Blue', hex: '#2563eb' },
               { name: 'blue silver', hex: '#b7babf' },
-              { name: 'Black', hex: '#1c1d21' },
+              { name: 'yellow', hex: '#ffff00' },
               { name: 'dark blue', hex: '#1e293b' }],
      slider:[{name:'golden', hex:"#EBD4A7"},
             {name:'Liquid Silver', hex:"#d1d5db"},
