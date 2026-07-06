@@ -5,13 +5,13 @@ const state = proxy({
     intro:true,
     activepart:'all',
     colors:{
-        cups:"#2563eb",
-        slider:"#EBD4A7",
+        cups:"#ffffff",
+        slider:"#ffffff",
         cushion: "#9D5242FF"
     },
 
     palettes: {
-        cups:[{ name: 'Blue', hex: '#2563eb' },
+        cups:[{ name: 'whtie', hex: '#ffffff' },
               { name: 'blue silver', hex: '#b7babf' },
               { name: 'yellow', hex: '#ffff00' },
               { name: 'dark blue', hex: '#1e293b' }],

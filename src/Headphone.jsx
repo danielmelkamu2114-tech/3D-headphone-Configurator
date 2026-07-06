@@ -32,6 +32,7 @@ export function Headphone(props) {
      meshref.current.position.y= state.headphoney
 
     meshref.current.rotation.y= state.rotationY
+
     const targetscale=state.headphonescale
     meshref.current.scale.set(targetscale, targetscale, targetscale)
   })
@@ -91,14 +92,14 @@ useFrame(()=>{
  />
 
 </mesh>
-      <mesh geometry={nodes.holder_Baked.geometry} material={materials['MergedBake_Baked.008']} >
+      {/* <mesh geometry={nodes.holder_Baked.geometry} material={materials['MergedBake_Baked.008']} >
           <primitive ref={matCushionRef}
     object={cushionMaterial } 
     attach="material" 
      // Or use '#ff0000' with all 6 digits!
   />
 
-</mesh>
+</mesh> */}
       <mesh geometry={nodes.insidespeacker_Baked.geometry} material={materials['MergedBake_Baked.008']} >
       <primitive ref={matCushionRef}
     object={cushionMaterial } 

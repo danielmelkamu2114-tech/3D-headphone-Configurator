@@ -55,45 +55,41 @@ RectAreaLightUniformsLib.init()
   
   {/* <Perf position="top-left" minimal={false} /> */}
  <PerspectiveCamera ref={camera} makeDefault  position={[0 ,0, 10]} fov={45}/>
-   {/* <Environment files={"/studio_small_04_1k.hdr"} environmentIntensity={0} environmentRotation={[1,0,1]}/> */}
+   <Environment files={"/blaubeuren_hillside_1k.hdr"} environmentIntensity={0.5} environmentRotation={[7,0,1]}/>
           
-          
-          <directionalLight/>
-          <directionalLight  intensity={2} position={[5,-1,0]}/>
-          <directionalLight 
-          // ref={dirLightRef}
+  
+        
+          <directionalLight  intensity={1.2} position={[5,-1,0]}/>
+          <directionalLight     // ref={dirLightRef}
             intensity={0.7} position={[3,1,0]}/>
 
          <directionalLight  intensity={0.2} position={[5,-1,20]}/>
-         {/* <directionalLight intensity={0} position={[5,-10,100]}/> */}
        
        
      
-        <rectAreaLight
-        // ref={rectLightRef1}
+        <rectAreaLight   // ref={rectLightRef1}
         width={10}
         height={20}
-        intensity={1}
+        intensity={0.8}
         rotation={[0.2,0,0]}
         position={[-2, -6 , 4]}
         color="#ffffff"
       /> 
 
-     <rectAreaLight
+    
+       <rectAreaLight
         // ref={rectLightRef}
         width={4}
         height={4}
-        intensity={5}
+        intensity={1}
         rotation={[1,0,0]}
         position={[5, -3, 10]}
         color="#ffffff"
       /> 
-
-      
       
 
 
-    <group  ref={model} position={[groupositionx,groupositiony,groupositionz]} scale={groupscale} rotation={[0,2.7,0]}>
+    <group  ref={model} position={[groupositionx,groupositiony,groupositionz]} scale={groupscale} rotation={[0.2,2.7,0]}>
    
  <group >
    
